@@ -17,7 +17,6 @@
   },
   "scripts": {
     "build": "tsc",
-    "generate": "yarn build && node dist/src/generate.js",
-    "generate-index": "yarn build && node dist/src/generateIndex.js"
+    "generate": "yarn build && cp public/* out/ && node dist/src/generate.js"
   }
 }
