@@ -1,0 +1,10 @@
+{
+  "extends": "@saberhq/tsconfig/tsconfig.mono.json",
+  "compilerOptions": {
+    "module": "ES2022",
+    "target": "ES2022",
+    "outDir": "dist/",
+    "types": ["node"]
+  },
+  "include": ["src/*.ts", ".eslintrc.cjs"]
+}
