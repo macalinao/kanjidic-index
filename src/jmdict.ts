@@ -465,12 +465,12 @@ export async function loadJMDict(
   return jmdictObj.JMdict[0].entry;
 }
 
-export const groupByKanji = (
-  dict: JMDictEntry[]
-): {
+interface Entries {
   entries: Record<string, JMDictEntry[]>;
   byKanji: Record<string, JMDictEntry[]>;
-} => {
+}
+
+export const groupByKanji = (dict: JMDictEntry[]): Entries => {
   const entries: Record<string, JMDictEntry[]> = {};
   const byKanji: Record<string, JMDictEntry[]> = {};
 
