@@ -489,7 +489,12 @@ export const groupByKanji = (
             if (!charsItem) {
               charsItem = byKanji[char] = [];
             }
-            charsItem.push(jmdictEntry);
+            // don't add duplicates
+            if (
+              !charsItem.find((it) => it.ent_seq[0] === jmdictEntry.ent_seq[0])
+            ) {
+              charsItem.push(jmdictEntry);
+            }
           });
         }
         let item = entries[kanji];
