@@ -1,5 +1,4 @@
 import * as fs from "fs/promises";
-import { Iconv } from "iconv";
 import invariant from "tiny-invariant";
 
 export interface KRadfile {
@@ -28,9 +27,7 @@ export const generateRadicals = (kradfile: KRadfile): Radkfile => {
 };
 
 export async function parseKRadfile(path: string): Promise<KRadfile> {
-  const data = await fs.readFile(path);
-  const iconv = new Iconv("EUC-JP", "UTF-8");
-  const converted = iconv.convert(data).toString();
+  const converted = await fs.readFile(path, "utf-8");
   const list = converted
     .split("\n")
     .filter((l) => !l.startsWith("#") && !!l)

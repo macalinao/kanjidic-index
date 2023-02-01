@@ -8,13 +8,7 @@ const __dirname = url.fileURLToPath(new URL(".", import.meta.url));
 const base = `${__dirname}../../`;
 const out = `${base}out/`;
 
-const kradfile = await parseKRadfile(`${base}data/kradzip/kradfile`);
-const kradfile2 = await parseKRadfile(`${base}data/kradzip/kradfile2`);
-
-const kanji = {
-  ...kradfile,
-  ...kradfile2,
-};
+const kanji = await parseKRadfile(`${base}data/kradfile-u`);
 const radicals = generateRadicals(kanji);
 
 await fs.mkdir(`${out}kradfile`, { recursive: true });
