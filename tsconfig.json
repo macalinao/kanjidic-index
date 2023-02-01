@@ -6,5 +6,5 @@
     "outDir": "dist/",
     "types": ["node"]
   },
-  "include": ["src/*.ts", ".eslintrc.cjs"]
+  "include": ["src/**/*.ts", ".eslintrc.cjs"]
 }

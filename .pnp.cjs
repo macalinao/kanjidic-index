@@ -29,12 +29,15 @@ const RAW_RUNTIME_STATE =
           ["@rushstack/eslint-patch", "npm:1.2.0"],\
           ["@saberhq/eslint-config", "virtual:dc3fc578bfa5e06182a4d2be39ede0bc5b74940b1ffe0d70c26892ab140a4699787750fba175dc306292e80b4aa2c8c5f68c2a821e69b2c37e360c0dff36ff66#npm:2.1.0"],\
           ["@saberhq/tsconfig", "npm:2.1.0"],\
+          ["@types/iconv", "npm:3.0.1"],\
           ["@types/node", "npm:18.11.18"],\
           ["@types/xml2json", "npm:0.11.4"],\
           ["eslint", "npm:8.32.0"],\
+          ["iconv", "npm:3.0.1"],\
           ["kanjidic2stream", "npm:0.1.1"],\
           ["lint-staged", "npm:13.1.0"],\
           ["prettier", "npm:2.8.3"],\
+          ["tiny-invariant", "npm:1.3.1"],\
           ["ts-node", "virtual:dc3fc578bfa5e06182a4d2be39ede0bc5b74940b1ffe0d70c26892ab140a4699787750fba175dc306292e80b4aa2c8c5f68c2a821e69b2c37e360c0dff36ff66#npm:10.9.1"],\
           ["typescript", "patch:typescript@npm%3A4.9.4#optional!builtin<compat/typescript>::version=4.9.4&hash=23ec76"],\
           ["xml2json", "npm:0.12.0"]\
@@ -281,6 +284,16 @@ const RAW_RUNTIME_STATE =
         "packageLocation": "../../../.local/share/yarn/berry/cache/@tsconfig-node16-npm-1.0.3-6a4a30eda2-9.zip/node_modules/@tsconfig/node16/",\
         "packageDependencies": [\
           ["@tsconfig/node16", "npm:1.0.3"]\
+        ],\
+        "linkType": "HARD"\
+      }]\
+    ]],\
+    ["@types/iconv", [\
+      ["npm:3.0.1", {\
+        "packageLocation": "../../../.local/share/yarn/berry/cache/@types-iconv-npm-3.0.1-f759739369-9.zip/node_modules/@types/iconv/",\
+        "packageDependencies": [\
+          ["@types/iconv", "npm:3.0.1"],\
+          ["@types/node", "npm:18.11.18"]\
         ],\
         "linkType": "HARD"\
       }]\
@@ -2137,6 +2150,16 @@ const RAW_RUNTIME_STATE =
         "linkType": "HARD"\
       }]\
     ]],\
+    ["iconv", [\
+      ["npm:3.0.1", {\
+        "packageLocation": "./.yarn/unplugged/iconv-npm-3.0.1-b753d59bbf/node_modules/iconv/",\
+        "packageDependencies": [\
+          ["iconv", "npm:3.0.1"],\
+          ["node-gyp", "npm:9.3.1"]\
+        ],\
+        "linkType": "HARD"\
+      }]\
+    ]],\
     ["iconv-lite", [\
       ["npm:0.6.3", {\
         "packageLocation": "../../../.local/share/yarn/berry/cache/iconv-lite-npm-0.6.3-24b8aae27e-9.zip/node_modules/iconv-lite/",\
@@ -3369,12 +3392,15 @@ const RAW_RUNTIME_STATE =
           ["@rushstack/eslint-patch", "npm:1.2.0"],\
           ["@saberhq/eslint-config", "virtual:dc3fc578bfa5e06182a4d2be39ede0bc5b74940b1ffe0d70c26892ab140a4699787750fba175dc306292e80b4aa2c8c5f68c2a821e69b2c37e360c0dff36ff66#npm:2.1.0"],\
           ["@saberhq/tsconfig", "npm:2.1.0"],\
+          ["@types/iconv", "npm:3.0.1"],\
           ["@types/node", "npm:18.11.18"],\
           ["@types/xml2json", "npm:0.11.4"],\
           ["eslint", "npm:8.32.0"],\
+          ["iconv", "npm:3.0.1"],\
           ["kanjidic2stream", "npm:0.1.1"],\
           ["lint-staged", "npm:13.1.0"],\
           ["prettier", "npm:2.8.3"],\
+          ["tiny-invariant", "npm:1.3.1"],\
           ["ts-node", "virtual:dc3fc578bfa5e06182a4d2be39ede0bc5b74940b1ffe0d70c26892ab140a4699787750fba175dc306292e80b4aa2c8c5f68c2a821e69b2c37e360c0dff36ff66#npm:10.9.1"],\
           ["typescript", "patch:typescript@npm%3A4.9.4#optional!builtin<compat/typescript>::version=4.9.4&hash=23ec76"],\
           ["xml2json", "npm:0.12.0"]\
@@ -3748,6 +3774,15 @@ const RAW_RUNTIME_STATE =
         "packageLocation": "../../../.local/share/yarn/berry/cache/through-npm-2.3.8-df5f72a16e-9.zip/node_modules/through/",\
         "packageDependencies": [\
           ["through", "npm:2.3.8"]\
+        ],\
+        "linkType": "HARD"\
+      }]\
+    ]],\
+    ["tiny-invariant", [\
+      ["npm:1.3.1", {\
+        "packageLocation": "../../../.local/share/yarn/berry/cache/tiny-invariant-npm-1.3.1-a8ca214e49-9.zip/node_modules/tiny-invariant/",\
+        "packageDependencies": [\
+          ["tiny-invariant", "npm:1.3.1"]\
         ],\
         "linkType": "HARD"\
       }]\
