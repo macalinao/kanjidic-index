@@ -478,25 +478,23 @@ export const groupByKanji = (dict: JMDictEntry[]): Entries => {
     if (jmdictEntry.k_ele) {
       jmdictEntry.k_ele.forEach((kEle) => {
         const kanji = kEle.keb[0];
-        if (kanji.length > 1) {
-          const chars = kanji.split("");
-          chars.forEach((char) => {
-            // ignore hiragana, katakana
-            if (/[\u3040-\u309f]|[\u30a0-\u30ff]|[\uff66-\uff9f]/.test(char)) {
-              return;
-            }
-            let charsItem = byKanji[char];
-            if (!charsItem) {
-              charsItem = byKanji[char] = [];
-            }
-            // don't add duplicates
-            if (
-              !charsItem.find((it) => it.ent_seq[0] === jmdictEntry.ent_seq[0])
-            ) {
-              charsItem.push(jmdictEntry);
-            }
-          });
-        }
+        const chars = kanji.split("");
+        chars.forEach((char) => {
+          // ignore hiragana, katakana
+          if (/[\u3040-\u309f]|[\u30a0-\u30ff]|[\uff66-\uff9f]/.test(char)) {
+            return;
+          }
+          let charsItem = byKanji[char];
+          if (!charsItem) {
+            charsItem = byKanji[char] = [];
+          }
+          // don't add duplicates
+          if (
+            !charsItem.find((it) => it.ent_seq[0] === jmdictEntry.ent_seq[0])
+          ) {
+            charsItem.push(jmdictEntry);
+          }
+        });
         let item = entries[kanji];
         if (!item) {
           item = entries[kanji] = [];
