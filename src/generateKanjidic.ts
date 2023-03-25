@@ -7,7 +7,7 @@ import * as url from "url";
 const __dirname = url.fileURLToPath(new URL(".", import.meta.url));
 
 const base = `${__dirname}../../`;
-const path = `${base}kanjidic2.xml`;
+const path = `${base}data/kanjidic2.xml`;
 const out = `${base}out/`;
 
 // Read the KANJIDIC file and starts parsing.
@@ -27,13 +27,27 @@ const promises: Promise<void>[] = [];
 //   ...
 stream.on("data", (e: Element) => {
   if (e.type === "character") {
+    const literal = e.literal;
+    const unicode = literal
+      // Normally we use NFKC because we're using Japanese.
+      // https://towardsdatascience.com/difference-between-nfd-nfc-nfkd-and-nfkc-explained-with-python-code-e2631f96ae6c
+      // However, normalization has multiple characters which map to the same codepoint, e.g.
+      // 練 vs 練
+      // .normalize("NFKC")
+      // Thus we encode to hex here to explicitly opt out of normalization.
+      .codePointAt(0)
+      ?.toString(16)
+      .toUpperCase();
+    if (!unicode) {
+      throw new Error(`Unknown unicode codepoint for ${literal}.`);
+    }
     promises.push(
       (async () => {
         await fs.writeFile(
-          `${out}by-literal/${e.literal}.json`,
+          `${out}by-literal/U+${unicode}.json`,
           JSON.stringify(e)
         );
-        console.log("wrote character", e.literal);
+        console.log("wrote character", literal);
       })()
     );
   }

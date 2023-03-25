@@ -22,7 +22,7 @@
   },
   "scripts": {
     "build": "tsc",
-    "generate:kanjidic": "yarn build && cp public/* out/ && node dist/src/generateKanjidict.js",
+    "generate:kanjidic": "yarn build && cp public/* out/ && node dist/src/generateKanjidic.js",
     "generate:jmdict": "yarn build && cp public/* out/ && node dist/src/generateJMDict.js"
   }
 }
